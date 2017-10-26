@@ -13,10 +13,9 @@ var config = {
   mode: {
     css: {
       variables: {
-        replaceSvgWithPng: function(){
+        replaceSvgWithPng: function() {
           return function(sprite, render) {
             return render(sprite).split('.svg').join('.png');
-
           }
         }
       },
@@ -40,7 +39,7 @@ gulp.task('createSprite', ['beginClean'], function() {
     .pipe(gulp.dest('./app/temp/sprite/'));
 });
 
-gulp.task('createPngCopy',['createSprite'], function(){
+gulp.task('createPngCopy', ['createSprite'], function() {
   return gulp.src('./app/temp/sprite/css/*.svg')
     .pipe(svg2png())
     .pipe(gulp.dest('./app/temp/sprite/css'));

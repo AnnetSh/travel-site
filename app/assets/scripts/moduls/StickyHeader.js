@@ -20,6 +20,7 @@ class StickyHeader {
       Waypoint.refreshAll();
     });
   }
+  
 
   addSmoothScrolling() {
     this.headerLinks.smoothScroll();
